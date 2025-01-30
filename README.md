@@ -1,2 +1,2 @@
-# disableSpellLightPatcher
-Patcher that removes light emit by spells in selected schools. Useful for making it so you are not detected while sneaking simply for having your spells out.
+# Dynamic Stat Scaler
+Allows the user to scale in-game NPC's stats relative to player's level. Make weak enemies harder and strong enemies weaker.
