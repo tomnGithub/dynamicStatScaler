@@ -1,0 +1,13 @@
+{
+  "Nickname": "madDynamicStatScaler",
+  "Visibility": "Visible",
+  "OneLineDescription": "madDynamicStatScaler",
+  "LongDescription": "madDynamicStatScaler",
+  "PreferredAutoVersioning": "Default",
+  "RequiredMods": [],
+  "TargetedReleases": [
+    "SkyrimSE",
+    "SkyrimVR",
+    "SkyrimSEGog"
+  ]
+}
