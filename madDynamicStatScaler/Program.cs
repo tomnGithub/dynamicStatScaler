@@ -522,12 +522,19 @@ public class Program
         spellStaminaPerLevelGetter = spellStaminaPerLevelLink.Resolve(state.LinkCache);
         modifiedStamina = state.PatchMod.Spells.GetOrAddAsOverride(spellStaminaPerLevelGetter);
 
+        i = 0;
         foreach (var effect in modifiedStamina.Effects)
         {
+            i++;
             if (effect.Data != null)
             {
                 effect.Data.Magnitude = formSettings.Value.mad_Rescale_health_dragonNum;
+                if (i >= formSettings.Value.mad_Rescale_bossdragNum)
+                {
+                    effect.Data.Magnitude = 0;
+                }
             }
+
         }
 
 
@@ -536,11 +543,17 @@ public class Program
         spellStaminaPerLevelGetter = spellStaminaPerLevelLink.Resolve(state.LinkCache);
         modifiedStamina = state.PatchMod.Spells.GetOrAddAsOverride(spellStaminaPerLevelGetter);
 
+        i = 0;
         foreach (var effect in modifiedStamina.Effects)
         {
+            i++;
             if (effect.Data != null)
             {
                 effect.Data.Magnitude = formSettings.Value.mad_Rescale_health_Negative_DragonNum;
+                if (i >= formSettings.Value.mad_Rescale_bossdragNum)
+                {
+                    effect.Data.Magnitude = 0;
+                }
             }
         }
 
