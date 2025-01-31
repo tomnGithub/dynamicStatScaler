@@ -143,13 +143,21 @@ namespace madDynamicStatScaler
         [SettingName("Dragon: Health Added Per Level Lower than Player")]
         public float mad_Rescale_health_dragonNum { get; set; } = 1;
 
-
-
-
         [SettingName("Dragon: Health Decreased Per Level Higher than Player")]
         public float mad_Rescale_health_Negative_DragonNum { get; set; } = -1;
 
-       
+        [SettingName("Dragon: Unarmed Damage Added Per Level Lower than Player")]
+        public float mad_Rescale_UA_dragonNum { get; set; } = 1;
+
+        [SettingName("Dragon: Unarmed Damage Decreased Per Level Higher than Player")]
+        public float mad_Rescale_UA_Negative_DragonNum { get; set; } = -1;
+
+        [SettingName("Creature: Unarmed Damage Added Per Level Lower than Player")]
+        public float mad_Rescale_UA_CreatureNum { get; set; } = 1;
+
+        [SettingName("Creature: Unarmed Damage Decreased Per Level Higher than Player")]
+        public float mad_Rescale_UA_Negative_CreatureNum { get; set; } = -1;
+
 
 
 

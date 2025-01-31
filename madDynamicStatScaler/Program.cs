@@ -557,7 +557,76 @@ public class Program
             }
         }
 
-      
+        spellStaminaPerLevel = new FormLink<ISpellGetter>(FormKey.Factory("000837:madDynamicStatScaler.esp"));
+        spellStaminaPerLevelLink = spellStaminaPerLevel;
+        spellStaminaPerLevelGetter = spellStaminaPerLevelLink.Resolve(state.LinkCache);
+        modifiedStamina = state.PatchMod.Spells.GetOrAddAsOverride(spellStaminaPerLevelGetter);
+
+        i = 0;
+        foreach (var effect in modifiedStamina.Effects)
+        {
+            i++;
+            if (effect.Data != null)
+            {
+                effect.Data.Magnitude = formSettings.Value.mad_Rescale_UA_dragonNum;
+                if (i >= formSettings.Value.mad_Rescale_bossdragNum)
+                {
+                    effect.Data.Magnitude = 0;
+                }
+            }
+        }
+
+        spellStaminaPerLevel = new FormLink<ISpellGetter>(FormKey.Factory("000838:madDynamicStatScaler.esp"));
+        spellStaminaPerLevelLink = spellStaminaPerLevel;
+        spellStaminaPerLevelGetter = spellStaminaPerLevelLink.Resolve(state.LinkCache);
+        modifiedStamina = state.PatchMod.Spells.GetOrAddAsOverride(spellStaminaPerLevelGetter);
+
+        i = 0;
+        foreach (var effect in modifiedStamina.Effects)
+        {
+            i++;
+            if (effect.Data != null)
+            {
+                effect.Data.Magnitude = formSettings.Value.mad_Rescale_UA_Negative_DragonNum;
+                if (i >= formSettings.Value.mad_Rescale_bossdragNum)
+                {
+                    effect.Data.Magnitude = 0;
+                }
+            }
+        }
+
+        spellStaminaPerLevel = new FormLink<ISpellGetter>(FormKey.Factory("000835:madDynamicStatScaler.esp"));
+        spellStaminaPerLevelLink = spellStaminaPerLevel;
+        spellStaminaPerLevelGetter = spellStaminaPerLevelLink.Resolve(state.LinkCache);
+        modifiedStamina = state.PatchMod.Spells.GetOrAddAsOverride(spellStaminaPerLevelGetter);
+
+        
+        foreach (var effect in modifiedStamina.Effects)
+        {
+           
+            if (effect.Data != null)
+            {
+                effect.Data.Magnitude = formSettings.Value.mad_Rescale_UA_CreatureNum;
+
+            }
+        }
+
+        spellStaminaPerLevel = new FormLink<ISpellGetter>(FormKey.Factory("000836:madDynamicStatScaler.esp"));
+        spellStaminaPerLevelLink = spellStaminaPerLevel;
+        spellStaminaPerLevelGetter = spellStaminaPerLevelLink.Resolve(state.LinkCache);
+        modifiedStamina = state.PatchMod.Spells.GetOrAddAsOverride(spellStaminaPerLevelGetter);
+
+
+        foreach (var effect in modifiedStamina.Effects)
+        {
+
+            if (effect.Data != null)
+            {
+                effect.Data.Magnitude = formSettings.Value.mad_Rescale_UA_Negative_CreatureNum;
+
+            }
+        }
+
 
 
     }
