@@ -11,7 +11,15 @@ namespace madDynamicStatScaler
     public record Settings
     {
 
-
+        [SettingName("General: Armor Added Per Level Lower than Player")]
+        public float mad_Rescale_armorNum { get; set; } = 1;
+		[SettingName("General: Armor Decreased Per Level Higher than Player")]
+        public float mad_Rescale_armorNum_N { get; set; } = -1;
+		[SettingName("General: Magic Resist Added Per Level Lower than Player")]
+        public float mad_Rescale_MagicResistNum { get; set; } = 1;
+		[SettingName("General: Magic Resist Decreased Per Level Higher than Player")]
+        public float mad_Rescale_MagicResistNum_N { get; set; } = -1;
+		
         [SettingName("General: Health Added Per Level Lower than Player")]
         public float mad_Rescale_healthNum { get; set; } = 1;
 
@@ -82,6 +90,20 @@ namespace madDynamicStatScaler
         [SettingName("Boss & Dragon: Max Level Diff")]
         public int mad_Rescale_bossdragNum { get; set; } = 40;
 
+
+		[SettingName("Boss: Armor Added Per Level Lower than Player")]
+        public float mad_Rescale_armorNum_boss { get; set; } = 1;
+
+		[SettingName("Boss: Armor Decreased Per Level Higher than Player")]
+        public float mad_Rescale_armorNum_bossN { get; set; } = -1;
+
+		[SettingName("Boss: Magic Resist Added Per Level Lower than Player")]
+        public float mad_Rescale_MagicResistNum_boss { get; set; } = 1;
+
+		[SettingName("Boss: Magic Resist Decreased Per Level Higher than Player")]
+        public float mad_Rescale_MagicResistNum_bossN { get; set; } = -1;
+		
+		
         [SettingName("Boss: Health Added Per Level Lower than Player")]
         public float mad_Rescale_health_BossNum { get; set; } = 1;
 
@@ -151,6 +173,15 @@ namespace madDynamicStatScaler
 
         [SettingName("Dragon: Unarmed Damage Decreased Per Level Higher than Player")]
         public float mad_Rescale_UA_Negative_DragonNum { get; set; } = -1;
+	
+		[SettingName("Dragon: Armor Added Per Level Lower than Player")]
+        public float mad_Rescale_armorNum_Dragon { get; set; } = 1;
+		[SettingName("Dragon: Armor Decreased Per Level Higher than Player")]
+        public float mad_Rescale_armorNum_DragonN { get; set; } = -1;
+		[SettingName("Dragon: Magic Resist Added Per Level Lower than Player")]
+        public float mad_Rescale_MagicResistNum_Dragon { get; set; } = 1;
+		[SettingName("Dragon: Magic Resist Decreased Per Level Higher than Player")]
+        public float mad_Rescale_MagicResistNum_DragonN { get; set; } = -1;
 
         [SettingName("Creature: Unarmed Damage Added Per Level Lower than Player")]
         public float mad_Rescale_UA_CreatureNum { get; set; } = 1;
@@ -160,6 +191,9 @@ namespace madDynamicStatScaler
 
 
 
+
+		
+		
 
 
 

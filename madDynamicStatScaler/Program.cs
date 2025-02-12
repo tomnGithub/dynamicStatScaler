@@ -628,7 +628,219 @@ public class Program
         }
 
 
+        //v2 Armor and MR
+        spellStaminaPerLevel = new FormLink<ISpellGetter>(FormKey.Factory("00083A:madDynamicStatScaler.esp"));
+        spellStaminaPerLevelLink = spellStaminaPerLevel;
+        spellStaminaPerLevelGetter = spellStaminaPerLevelLink.Resolve(state.LinkCache);
+        modifiedStamina = state.PatchMod.Spells.GetOrAddAsOverride(spellStaminaPerLevelGetter);
 
+
+        foreach (var effect in modifiedStamina.Effects)
+        {
+
+            if (effect.Data != null)
+            {
+                effect.Data.Magnitude = formSettings.Value.mad_Rescale_armorNum;
+
+            }
+        }
+        spellStaminaPerLevel = new FormLink<ISpellGetter>(FormKey.Factory("00083B:madDynamicStatScaler.esp"));
+        spellStaminaPerLevelLink = spellStaminaPerLevel;
+        spellStaminaPerLevelGetter = spellStaminaPerLevelLink.Resolve(state.LinkCache);
+        modifiedStamina = state.PatchMod.Spells.GetOrAddAsOverride(spellStaminaPerLevelGetter);
+
+
+        foreach (var effect in modifiedStamina.Effects)
+        {
+
+            if (effect.Data != null)
+            {
+                effect.Data.Magnitude = formSettings.Value.mad_Rescale_armorNum_N;
+
+            }
+        }
+
+        spellStaminaPerLevel = new FormLink<ISpellGetter>(FormKey.Factory("000841:madDynamicStatScaler.esp"));
+        spellStaminaPerLevelLink = spellStaminaPerLevel;
+        spellStaminaPerLevelGetter = spellStaminaPerLevelLink.Resolve(state.LinkCache);
+        modifiedStamina = state.PatchMod.Spells.GetOrAddAsOverride(spellStaminaPerLevelGetter);
+
+
+        foreach (var effect in modifiedStamina.Effects)
+        {
+
+            if (effect.Data != null)
+            {
+                effect.Data.Magnitude = formSettings.Value.mad_Rescale_MagicResistNum;
+
+            }
+        }
+        spellStaminaPerLevel = new FormLink<ISpellGetter>(FormKey.Factory("000842:madDynamicStatScaler.esp"));
+        spellStaminaPerLevelLink = spellStaminaPerLevel;
+        spellStaminaPerLevelGetter = spellStaminaPerLevelLink.Resolve(state.LinkCache);
+        modifiedStamina = state.PatchMod.Spells.GetOrAddAsOverride(spellStaminaPerLevelGetter);
+
+
+        foreach (var effect in modifiedStamina.Effects)
+        {
+
+            if (effect.Data != null)
+            {
+                effect.Data.Magnitude = formSettings.Value.mad_Rescale_MagicResistNum_N;
+
+            }
+        }
+        //v2 boss and dragon
+        spellStaminaPerLevel = new FormLink<ISpellGetter>(FormKey.Factory("00083C:madDynamicStatScaler.esp"));
+        spellStaminaPerLevelLink = spellStaminaPerLevel;
+        spellStaminaPerLevelGetter = spellStaminaPerLevelLink.Resolve(state.LinkCache);
+        modifiedStamina = state.PatchMod.Spells.GetOrAddAsOverride(spellStaminaPerLevelGetter);
+
+        i = 0;
+        foreach (var effect in modifiedStamina.Effects)
+        {
+            i++;
+            if (effect.Data != null)
+            {
+                effect.Data.Magnitude = formSettings.Value.mad_Rescale_armorNum_boss;
+                if (i >= formSettings.Value.mad_Rescale_bossdragNum)
+                {
+                    effect.Data.Magnitude = 0;
+                }
+            }
+        }
+
+        spellStaminaPerLevel = new FormLink<ISpellGetter>(FormKey.Factory("00083D:madDynamicStatScaler.esp"));
+        spellStaminaPerLevelLink = spellStaminaPerLevel;
+        spellStaminaPerLevelGetter = spellStaminaPerLevelLink.Resolve(state.LinkCache);
+        modifiedStamina = state.PatchMod.Spells.GetOrAddAsOverride(spellStaminaPerLevelGetter);
+
+        i = 0;
+        foreach (var effect in modifiedStamina.Effects)
+        {
+            i++;
+            if (effect.Data != null)
+            {
+                effect.Data.Magnitude = formSettings.Value.mad_Rescale_armorNum_bossN;
+                if (i >= formSettings.Value.mad_Rescale_bossdragNum)
+                {
+                    effect.Data.Magnitude = 0;
+                }
+            }
+        }
+        spellStaminaPerLevel = new FormLink<ISpellGetter>(FormKey.Factory("00083E:madDynamicStatScaler.esp"));
+        spellStaminaPerLevelLink = spellStaminaPerLevel;
+        spellStaminaPerLevelGetter = spellStaminaPerLevelLink.Resolve(state.LinkCache);
+        modifiedStamina = state.PatchMod.Spells.GetOrAddAsOverride(spellStaminaPerLevelGetter);
+
+        i = 0;
+        foreach (var effect in modifiedStamina.Effects)
+        {
+            i++;
+            if (effect.Data != null)
+            {
+                effect.Data.Magnitude = formSettings.Value.mad_Rescale_armorNum_Dragon;
+                if (i >= formSettings.Value.mad_Rescale_bossdragNum)
+                {
+                    effect.Data.Magnitude = 0;
+                }
+            }
+        }
+
+        spellStaminaPerLevel = new FormLink<ISpellGetter>(FormKey.Factory("00083F:madDynamicStatScaler.esp"));
+        spellStaminaPerLevelLink = spellStaminaPerLevel;
+        spellStaminaPerLevelGetter = spellStaminaPerLevelLink.Resolve(state.LinkCache);
+        modifiedStamina = state.PatchMod.Spells.GetOrAddAsOverride(spellStaminaPerLevelGetter);
+
+        i = 0;
+        foreach (var effect in modifiedStamina.Effects)
+        {
+            i++;
+            if (effect.Data != null)
+            {
+                effect.Data.Magnitude = formSettings.Value.mad_Rescale_armorNum_DragonN;
+                if (i >= formSettings.Value.mad_Rescale_bossdragNum)
+                {
+                    effect.Data.Magnitude = 0;
+                }
+            }
+        }
+
+        spellStaminaPerLevel = new FormLink<ISpellGetter>(FormKey.Factory("000843:madDynamicStatScaler.esp"));
+        spellStaminaPerLevelLink = spellStaminaPerLevel;
+        spellStaminaPerLevelGetter = spellStaminaPerLevelLink.Resolve(state.LinkCache);
+        modifiedStamina = state.PatchMod.Spells.GetOrAddAsOverride(spellStaminaPerLevelGetter);
+
+        i = 0;
+        foreach (var effect in modifiedStamina.Effects)
+        {
+            i++;
+            if (effect.Data != null)
+            {
+                effect.Data.Magnitude = formSettings.Value.mad_Rescale_MagicResistNum_boss;
+                if (i >= formSettings.Value.mad_Rescale_bossdragNum)
+                {
+                    effect.Data.Magnitude = 0;
+                }
+            }
+        }
+
+        spellStaminaPerLevel = new FormLink<ISpellGetter>(FormKey.Factory("000844:madDynamicStatScaler.esp"));
+        spellStaminaPerLevelLink = spellStaminaPerLevel;
+        spellStaminaPerLevelGetter = spellStaminaPerLevelLink.Resolve(state.LinkCache);
+        modifiedStamina = state.PatchMod.Spells.GetOrAddAsOverride(spellStaminaPerLevelGetter);
+
+        i = 0;
+        foreach (var effect in modifiedStamina.Effects)
+        {
+            i++;
+            if (effect.Data != null)
+            {
+                effect.Data.Magnitude = formSettings.Value.mad_Rescale_MagicResistNum_bossN;
+                if (i >= formSettings.Value.mad_Rescale_bossdragNum)
+                {
+                    effect.Data.Magnitude = 0;
+                }
+            }
+        }
+
+        spellStaminaPerLevel = new FormLink<ISpellGetter>(FormKey.Factory("000845:madDynamicStatScaler.esp"));
+        spellStaminaPerLevelLink = spellStaminaPerLevel;
+        spellStaminaPerLevelGetter = spellStaminaPerLevelLink.Resolve(state.LinkCache);
+        modifiedStamina = state.PatchMod.Spells.GetOrAddAsOverride(spellStaminaPerLevelGetter);
+
+        i = 0;
+        foreach (var effect in modifiedStamina.Effects)
+        {
+            i++;
+            if (effect.Data != null)
+            {
+                effect.Data.Magnitude = formSettings.Value.mad_Rescale_MagicResistNum_Dragon;
+                if (i >= formSettings.Value.mad_Rescale_bossdragNum)
+                {
+                    effect.Data.Magnitude = 0;
+                }
+            }
+        }
+
+        spellStaminaPerLevel = new FormLink<ISpellGetter>(FormKey.Factory("000846:madDynamicStatScaler.esp"));
+        spellStaminaPerLevelLink = spellStaminaPerLevel;
+        spellStaminaPerLevelGetter = spellStaminaPerLevelLink.Resolve(state.LinkCache);
+        modifiedStamina = state.PatchMod.Spells.GetOrAddAsOverride(spellStaminaPerLevelGetter);
+
+        i = 0;
+        foreach (var effect in modifiedStamina.Effects)
+        {
+            i++;
+            if (effect.Data != null)
+            {
+                effect.Data.Magnitude = formSettings.Value.mad_Rescale_MagicResistNum_DragonN;
+                if (i >= formSettings.Value.mad_Rescale_bossdragNum)
+                {
+                    effect.Data.Magnitude = 0;
+                }
+            }
+        }
     }
 
 }
